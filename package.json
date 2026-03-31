@@ -1,0 +1,53 @@
+{
+  "name": "food-inventory",
+  "displayName": "Food Inventory",
+  "description": "Lightweight local food inventory tracking (price, weight, expiry, store) inside VS Code.",
+  "version": "0.0.1",
+  "publisher": "local-dev",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:foodInventory.addItem",
+    "onCommand:foodInventory.listItems",
+    "onView:foodInventory.itemsView"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "foodInventory.addItem",
+        "title": "Food Inventory: Add Item"
+      },
+      {
+        "command": "foodInventory.listItems",
+        "title": "Food Inventory: List Items"
+      }
+    ],
+    "views": {
+      "explorer": [
+        {
+          "id": "foodInventory.itemsView",
+          "name": "Food Inventory"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "test": "echo \"No tests yet\""
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "eslint": "^9.0.0",
+    "typescript": "^5.4.0",
+    "vsce": "^2.15.0"
+  }
+}
