@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import * as fs from 'fs';
 
-export interface FoodItem {
+export interface FoodItemeedafsd {
   id: string;
   name: string;
   store: string;
